@@ -1,0 +1,13 @@
+struct C3E3f_Output {
+  float4 color : COLOR;
+};
+
+C3E3f_Output C3E3f_texture(float2 texCoord : TEXCOORD0,
+                           uniform sampler2D decal : TEX0)
+{
+  C3E3f_Output OUT;
+  OUT.color = tex2D(decal,texCoord);
+  //tutaj zmieniam nasycenie kolow (r,g,b,a)
+  OUT.color *= float4(1.0,1.0,5.0,1.0);
+  return OUT;
+}

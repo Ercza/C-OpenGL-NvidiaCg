@@ -1,0 +1,19 @@
+struct C3E2v_Output {
+  float4 position : POSITION;
+  float3 color    : COLOR;
+  float2 texCoord : TEXCOORD0;
+};
+
+C3E2v_Output C3E2v_varying(float2 position : POSITION,
+                           float3 color    : COLOR,
+                           float2 texCoord : TEXCOORD0)
+{
+  C3E2v_Output OUT;
+
+  OUT.position = float4(position,0,1);
+  OUT.color    = float4(0,1,0,1);
+  OUT.texCoord = texCoord;
+
+  return OUT;	
+}
+
